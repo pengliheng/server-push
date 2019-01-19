@@ -1,21 +1,24 @@
+#!/usr/bin/env node
+
 const http = require('http');
 const fs = require('fs');
 const chalk = require('chalk');
 let mod = require('yargs').argv
 const WebSocket = require('ws');
-const wss = new WebSocket.Server({ port: 8888 });
 
 
 // 打开连接
 var c = require('child_process')
+const {dist,p,port} = mod;
+let PORT;
+PORT = p?p:port;
+PORT = PORT?PORT:9999;
+
  
-c.exec("open http://localhost:8080")
+c.exec(`open http://localhost:${PORT}`)
 
 
-const dist = mod._[0]
-// console.log(
-//   chalk.red(dist)
-// );
+const wss = new WebSocket.Server({ port:8888 });
 
 
 const wsScript = require('./client');
@@ -26,8 +29,8 @@ const srv = http.createServer((req, res) => {
   html+=wsScript.script;
   res.end(html);
 });
-srv.listen(8080,()=>{
-  console.log('success listen port 8080');
+srv.listen(PORT,()=>{
+  console.log(`success listen port ${PORT}`);
 })
 
 

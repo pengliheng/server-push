@@ -1,6 +1,6 @@
 {
   "name": "@pengliheng/srv",
-  "version": "1.0.5",
+  "version": "1.0.14",
   "main": "index.js",
   "license": "MIT",
   "author": "pengliheng",
@@ -14,5 +14,9 @@
   "description": "an npm package relize html page hot reload",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
-  }
+  },
+  "bin": {
+    "srv": "index.js"
+  },
+  "devDependencies": {}
 }
