@@ -1,6 +1,6 @@
 {
-  "name": "server-push",
-  "version": "1.0.4",
+  "name": "@pengliheng/srv",
+  "version": "1.0.5",
   "main": "index.js",
   "license": "MIT",
   "author": "pengliheng",
@@ -10,5 +10,9 @@
     "socket.io": "^2.2.0",
     "ws": "^6.1.2",
     "yargs": "^12.0.5"
+  },
+  "description": "an npm package relize html page hot reload",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
   }
 }
